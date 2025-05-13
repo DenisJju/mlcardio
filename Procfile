@@ -1,1 +1,2 @@
-web: gunicorn cardiac_ml_app.wsgi --log-file -
+web: gunicorn mlcardio.wsgi --log-file -
+
