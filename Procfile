@@ -1,2 +1,2 @@
-web: gunicorn cardiac_ml_app.wsgi --preload --workers=2 --timeout 120
+web: gunicorn cardiacmlapp.wsgi --preload --workers=2 --timeout 120
 
