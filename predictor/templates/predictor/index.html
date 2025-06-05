@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardiac Emergency Prediction</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% staticfiles 'css/bootstrap.min.css' %}">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form p {
+            margin: 0;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #198754;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #157347;
+        }
+
+        .alert {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .alert h4 {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Cardiac Emergency Prediction</h2>
+        </div>
+
+        <div class="card-body">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Check Your Next Quick Action</button>
+            </form>
+
+            {% if prediction is not None %}
+                <div class="alert alert-info">
+                    <h4>Prediction Result</h4>
+                    <h5>
+                        {% if prediction == 0 %}
+                            Normal
+                        {% elif prediction == 1 %}
+                            Moderate Emergency
+                        {% elif prediction == 2 %}
+                            Severe Emergency
+                        {% endif %}
+                    </h5>
+                </div>
+            {% endif %}
+
+            {% if error_message %}
+                <div class="alert alert-danger">
+                    <h4>Error</h4>
+                    <p>{{ error_message }}</p>
+                </div>
+            {% endif %}
+            {% if success_message %}
+                <div class="alert alert-success">
+                    <h4>Success</h4>
+                    <p>{{ success_message }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="{% staticfiles 'js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+from django import forms
+
+class InputForm(forms.Form):
+    age = forms.FloatField(label='Age', widget=forms.NumberInput(attrs={'step': 'any', 'min': '0'}))
+    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female')])
+    heart_rate = forms.FloatField(label="Heart Rate")
+    blood_pressure = forms.FloatField(label="Blood Pressure")
+    oxygen_saturation = forms.FloatField(label="Oxygen Saturation")
+    respiratory_rate = forms.FloatField(label="Respiratory Rate")
+    temperature = forms.FloatField(label="Temperature")
+    consciousness_level = forms.FloatField(label="Consciousness Level")
+    chest_pain = forms.FloatField(label="Chest Pain")
+    shortness_of_breath = forms.FloatField(label="Shortness of Breath")
+    ecg_findings = forms.FloatField(label="ECG Findings")
+    cardiac_history = forms.FloatField(label="Cardiac History")
+    diabetes = forms.FloatField(label="Diabetes")
+    hypertension = forms.FloatField(label="Hypertension")
+    smoking_history = forms.FloatField(label="Smoking History")
+    cholesterol_levels = forms.FloatField(label="Cholesterol Levels")
+    family_history = forms.FloatField(label="Family History")
+    medication_compliance = forms.FloatField(label="Medication Compliance")
+    physical_activity = forms.FloatField(label="Physical Activity")
+    mental_stress_level = forms.FloatField(label="Mental Stress Level")
