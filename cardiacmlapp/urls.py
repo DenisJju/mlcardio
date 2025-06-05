@@ -20,7 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('predictor.urls')),  # Include app's URLs at the root
-    path('home/', views.home),
+    path('index/', views.index),
 ]
 
 handle404 = 'cardiacmlapp.views.handle404'
