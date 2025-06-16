@@ -1,4 +1,5 @@
-from django.http import HttpResponse httpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound
+
 from django.urls import path, include
 from django.conf.urls import handler404
 from django.shortcuts import render
