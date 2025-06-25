@@ -6,7 +6,11 @@
     <title>Cardiac Emergency Prediction</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% staticfiles 'css/bootstrap.min.css' %}">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 
     <style>
         body {
@@ -132,7 +136,10 @@
 </div>
 
 <!-- Bootstrap JS (Optional) -->
-<script src="{% staticfiles 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
 
 </body>
 </html>
