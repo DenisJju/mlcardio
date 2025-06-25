@@ -1,6 +1,6 @@
 asgiref==3.8.1
 # Editable Git install with no remote (DicomP==1.0)
--e c:\users\user\desktop\dicomp
+#-e c:\users\user\desktop\dicomp
 dj-database-url==2.3.0
 Django==5.2.1
 django-heroku==0.3.1
