@@ -16,12 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('predictor.urls')),  # Include app's URLs at the root
-    path('index/', views.index),
+    path('', include('predictor.urls')),  # Routes / and /index/ to predictor.urls
 ]
 
-handle404 = 'cardiacmlapp.views.handle404'
+handler404 = 'cardiacmlapp.views.handle404'

@@ -6,9 +6,12 @@ import django_heroku
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+# DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
+
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +40,7 @@ ROOT_URLCONF = 'cardiacmlapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -58,8 +61,22 @@ WSGI_APPLICATION = 'cardiacmlapp.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mlcardiodb',       # this is your database name
+        'USER': 'postgres',         # your PostgreSQL username
+        'PASSWORD': 'admin123',     # the password you set during installation
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
+
+
+
+
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgres://user:password@localhost:5432/dbname')
+# }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -75,10 +92,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_URL = '/static/'
+STATIC_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
