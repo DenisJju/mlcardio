@@ -11,7 +11,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['denisjjuuko.pythonanywhere.com']
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
