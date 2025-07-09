@@ -61,18 +61,18 @@ WSGI_APPLICATION = 'cardiacmlapp.wsgi.application'
 #     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd4ohk50v3d79ff',       # this is your database name
-        'USER': 'u2p9ehp2irf2e5',         # your PostgreSQL username
-        'PASSWORD': 'p3ea18abd4ff259aabeb01371691b5ae6f3ec0418c1f3364707e9ffb142226200',     # the password you set during installation
-        'HOST': 'cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
-        'URL': 'postgres://u2p9ehp2irf2e5:p3ea18abd4ff259aabeb01371691b5ae6f3ec0418c1f3364707e9ffb142226200@cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d4ohk50v3d79ff',
-        'Heroku CLI': 'heroku pg:psql postgresql-contoured-59105 --app mlcardio',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd4ohk50v3d79ff',       # this is your database name
+#         'USER': 'u2p9ehp2irf2e5',         # your PostgreSQL username
+#         'PASSWORD': 'p3ea18abd4ff259aabeb01371691b5ae6f3ec0418c1f3364707e9ffb142226200',     # the password you set during installation
+#         'HOST': 'cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#         'URL': 'postgres://u2p9ehp2irf2e5:p3ea18abd4ff259aabeb01371691b5ae6f3ec0418c1f3364707e9ffb142226200@cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d4ohk50v3d79ff',
+#         'Heroku CLI': 'heroku pg:psql postgresql-contoured-59105 --app mlcardio',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -86,6 +86,12 @@ DATABASES = {
 # }
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # DATABASES = {
