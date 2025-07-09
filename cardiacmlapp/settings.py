@@ -57,10 +57,20 @@ WSGI_APPLICATION = 'cardiacmlapp.wsgi.application'
 
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'denisjjuuko$mlcardio',
+        'USER': 'denisjjuuko',
+        'PASSWORD': 'Password1234!',
+        'HOST': 'denisjjuuko.mysql.pythonanywhere-services.com',
     }
 }
 
