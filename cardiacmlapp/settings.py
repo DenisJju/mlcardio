@@ -93,6 +93,9 @@ DATABASES = {
     }
 }
 
+# Remove or comment this:
+# django_heroku.settings(locals())
+
 
 # DATABASES = {
 #     'default': dj_database_url.config(default='postgres://user:password@localhost:5432/dbname')
